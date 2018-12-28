@@ -349,7 +349,7 @@ var Listings = function (_Component) {
         value: function render() {
             return _react2.default.createElement(
                 'section',
-                { className: 'listings' },
+                { id: 'listings' },
                 _react2.default.createElement(
                     'section',
                     { className: 'search-area' },
@@ -360,8 +360,8 @@ var Listings = function (_Component) {
                     { className: 'sort-by-area' },
                     _react2.default.createElement(
                         'div',
-                        null,
-                        '450 results found'
+                        { className: 'results' },
+                        '135 results found'
                     ),
                     _react2.default.createElement(
                         'div',
@@ -383,13 +383,405 @@ var Listings = function (_Component) {
                         _react2.default.createElement(
                             'div',
                             { className: 'view' },
-                            _react2.default.createElement('i', { className: 'fas fa-th-list', 'aria-hidden': 'true' }),
-                            _react2.default.createElement('i', { className: 'fas fa-th', 'aria-hidden': 'true' })
+                            _react2.default.createElement('i', { className: 'fa fa-th-list', 'aria-hidden': 'true' }),
+                            _react2.default.createElement('i', { className: 'fa fa-th', 'aria-hidden': 'true' })
                         )
                     )
                 ),
-                _react2.default.createElement('section', { className: 'listings-results' }),
-                _react2.default.createElement('section', { className: 'pagination' })
+                _react2.default.createElement(
+                    'section',
+                    { className: 'listings-results' },
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'col-md-3' },
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'listing' },
+                            _react2.default.createElement(
+                                'div',
+                                { className: 'listing-img' },
+                                _react2.default.createElement(
+                                    'span',
+                                    { className: 'address' },
+                                    '9 St Claire Cv'
+                                ),
+                                _react2.default.createElement(
+                                    'div',
+                                    { className: 'details' },
+                                    _react2.default.createElement(
+                                        'div',
+                                        { className: 'col-md-3' },
+                                        _react2.default.createElement('div', { className: 'user-img' })
+                                    ),
+                                    _react2.default.createElement(
+                                        'div',
+                                        { className: 'col-md-9' },
+                                        _react2.default.createElement(
+                                            'div',
+                                            { className: 'user-details' },
+                                            _react2.default.createElement(
+                                                'span',
+                                                { className: 'user-name' },
+                                                'Nina Lockhart'
+                                            ),
+                                            _react2.default.createElement(
+                                                'span',
+                                                { className: 'post-date' },
+                                                '12.23.18'
+                                            )
+                                        ),
+                                        _react2.default.createElement(
+                                            'div',
+                                            { className: 'listing-details' },
+                                            _react2.default.createElement(
+                                                'div',
+                                                { className: 'floor-space' },
+                                                _react2.default.createElement('i', { className: 'fa fa-square-o', 'aria-hidden': 'true' }),
+                                                _react2.default.createElement(
+                                                    'span',
+                                                    null,
+                                                    '21,000 ft\xB2'
+                                                )
+                                            ),
+                                            _react2.default.createElement(
+                                                'div',
+                                                { className: 'bedrooms' },
+                                                _react2.default.createElement('i', { className: 'fa fa-bed', 'aria-hidden': 'true' }),
+                                                _react2.default.createElement(
+                                                    'span',
+                                                    null,
+                                                    '6 bedrooms'
+                                                )
+                                            )
+                                        ),
+                                        _react2.default.createElement(
+                                            'div',
+                                            { className: 'view-btn' },
+                                            'View Listing'
+                                        )
+                                    )
+                                )
+                            ),
+                            _react2.default.createElement(
+                                'div',
+                                { className: 'bottom-info' },
+                                _react2.default.createElement(
+                                    'span',
+                                    { className: 'price' },
+                                    '$8500 /month'
+                                ),
+                                _react2.default.createElement(
+                                    'span',
+                                    { className: 'location' },
+                                    _react2.default.createElement('i', { className: 'fa fa-map-marker', 'aria-hidden': 'true' }),
+                                    'Sacramento, CA'
+                                )
+                            )
+                        )
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'col-md-3' },
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'listing' },
+                            _react2.default.createElement(
+                                'div',
+                                { className: 'listing-img' },
+                                _react2.default.createElement(
+                                    'span',
+                                    { className: 'address' },
+                                    '9 St Claire Cv'
+                                ),
+                                _react2.default.createElement(
+                                    'div',
+                                    { className: 'details' },
+                                    _react2.default.createElement(
+                                        'div',
+                                        { className: 'col-md-3' },
+                                        _react2.default.createElement('div', { className: 'user-img' })
+                                    ),
+                                    _react2.default.createElement(
+                                        'div',
+                                        { className: 'col-md-9' },
+                                        _react2.default.createElement(
+                                            'div',
+                                            { className: 'user-details' },
+                                            _react2.default.createElement(
+                                                'span',
+                                                { className: 'user-name' },
+                                                'Nina Lockhart'
+                                            ),
+                                            _react2.default.createElement(
+                                                'span',
+                                                { className: 'post-date' },
+                                                '12.23.18'
+                                            )
+                                        ),
+                                        _react2.default.createElement(
+                                            'div',
+                                            { className: 'listing-details' },
+                                            _react2.default.createElement(
+                                                'div',
+                                                { className: 'floor-space' },
+                                                _react2.default.createElement('i', { className: 'fa fa-square-o', 'aria-hidden': 'true' }),
+                                                _react2.default.createElement(
+                                                    'span',
+                                                    null,
+                                                    '21,000 ft\xB2'
+                                                )
+                                            ),
+                                            _react2.default.createElement(
+                                                'div',
+                                                { className: 'bedrooms' },
+                                                _react2.default.createElement('i', { className: 'fa fa-bed', 'aria-hidden': 'true' }),
+                                                _react2.default.createElement(
+                                                    'span',
+                                                    null,
+                                                    '6 bedrooms'
+                                                )
+                                            )
+                                        ),
+                                        _react2.default.createElement(
+                                            'div',
+                                            { className: 'view-btn' },
+                                            'View Listing'
+                                        )
+                                    )
+                                )
+                            ),
+                            _react2.default.createElement(
+                                'div',
+                                { className: 'bottom-info' },
+                                _react2.default.createElement(
+                                    'span',
+                                    { className: 'price' },
+                                    '$8500 /month'
+                                ),
+                                _react2.default.createElement(
+                                    'span',
+                                    { className: 'location' },
+                                    _react2.default.createElement('i', { className: 'fa fa-map-marker', 'aria-hidden': 'true' }),
+                                    'Sacramento, CA'
+                                )
+                            )
+                        )
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'col-md-3' },
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'listing' },
+                            _react2.default.createElement(
+                                'div',
+                                { className: 'listing-img' },
+                                _react2.default.createElement(
+                                    'span',
+                                    { className: 'address' },
+                                    '9 St Claire Cv'
+                                ),
+                                _react2.default.createElement(
+                                    'div',
+                                    { className: 'details' },
+                                    _react2.default.createElement(
+                                        'div',
+                                        { className: 'col-md-3' },
+                                        _react2.default.createElement('div', { className: 'user-img' })
+                                    ),
+                                    _react2.default.createElement(
+                                        'div',
+                                        { className: 'col-md-9' },
+                                        _react2.default.createElement(
+                                            'div',
+                                            { className: 'user-details' },
+                                            _react2.default.createElement(
+                                                'span',
+                                                { className: 'user-name' },
+                                                'Nina Lockhart'
+                                            ),
+                                            _react2.default.createElement(
+                                                'span',
+                                                { className: 'post-date' },
+                                                '12.23.18'
+                                            )
+                                        ),
+                                        _react2.default.createElement(
+                                            'div',
+                                            { className: 'listing-details' },
+                                            _react2.default.createElement(
+                                                'div',
+                                                { className: 'floor-space' },
+                                                _react2.default.createElement('i', { className: 'fa fa-square-o', 'aria-hidden': 'true' }),
+                                                _react2.default.createElement(
+                                                    'span',
+                                                    null,
+                                                    '21,000 ft\xB2'
+                                                )
+                                            ),
+                                            _react2.default.createElement(
+                                                'div',
+                                                { className: 'bedrooms' },
+                                                _react2.default.createElement('i', { className: 'fa fa-bed', 'aria-hidden': 'true' }),
+                                                _react2.default.createElement(
+                                                    'span',
+                                                    null,
+                                                    '6 bedrooms'
+                                                )
+                                            )
+                                        ),
+                                        _react2.default.createElement(
+                                            'div',
+                                            { className: 'view-btn' },
+                                            'View Listing'
+                                        )
+                                    )
+                                )
+                            ),
+                            _react2.default.createElement(
+                                'div',
+                                { className: 'bottom-info' },
+                                _react2.default.createElement(
+                                    'span',
+                                    { className: 'price' },
+                                    '$8500 /month'
+                                ),
+                                _react2.default.createElement(
+                                    'span',
+                                    { className: 'location' },
+                                    _react2.default.createElement('i', { className: 'fa fa-map-marker', 'aria-hidden': 'true' }),
+                                    'Sacramento, CA'
+                                )
+                            )
+                        )
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'col-md-3' },
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'listing' },
+                            _react2.default.createElement(
+                                'div',
+                                { className: 'listing-img' },
+                                _react2.default.createElement(
+                                    'span',
+                                    { className: 'address' },
+                                    '9 St Claire Cv'
+                                ),
+                                _react2.default.createElement(
+                                    'div',
+                                    { className: 'details' },
+                                    _react2.default.createElement(
+                                        'div',
+                                        { className: 'col-md-3' },
+                                        _react2.default.createElement('div', { className: 'user-img' })
+                                    ),
+                                    _react2.default.createElement(
+                                        'div',
+                                        { className: 'col-md-9' },
+                                        _react2.default.createElement(
+                                            'div',
+                                            { className: 'user-details' },
+                                            _react2.default.createElement(
+                                                'span',
+                                                { className: 'user-name' },
+                                                'Nina Lockhart'
+                                            ),
+                                            _react2.default.createElement(
+                                                'span',
+                                                { className: 'post-date' },
+                                                '12.23.18'
+                                            )
+                                        ),
+                                        _react2.default.createElement(
+                                            'div',
+                                            { className: 'listing-details' },
+                                            _react2.default.createElement(
+                                                'div',
+                                                { className: 'floor-space' },
+                                                _react2.default.createElement('i', { className: 'fa fa-square-o', 'aria-hidden': 'true' }),
+                                                _react2.default.createElement(
+                                                    'span',
+                                                    null,
+                                                    '21,000 ft\xB2'
+                                                )
+                                            ),
+                                            _react2.default.createElement(
+                                                'div',
+                                                { className: 'bedrooms' },
+                                                _react2.default.createElement('i', { className: 'fa fa-bed', 'aria-hidden': 'true' }),
+                                                _react2.default.createElement(
+                                                    'span',
+                                                    null,
+                                                    '6 bedrooms'
+                                                )
+                                            )
+                                        ),
+                                        _react2.default.createElement(
+                                            'div',
+                                            { className: 'view-btn' },
+                                            'View Listing'
+                                        )
+                                    )
+                                )
+                            ),
+                            _react2.default.createElement(
+                                'div',
+                                { className: 'bottom-info' },
+                                _react2.default.createElement(
+                                    'span',
+                                    { className: 'price' },
+                                    '$8500 /month'
+                                ),
+                                _react2.default.createElement(
+                                    'span',
+                                    { className: 'location' },
+                                    _react2.default.createElement('i', { className: 'fa fa-map-marker', 'aria-hidden': 'true' }),
+                                    'Sacramento, CA'
+                                )
+                            )
+                        )
+                    )
+                ),
+                _react2.default.createElement(
+                    'section',
+                    { className: 'pagination' },
+                    _react2.default.createElement(
+                        'ul',
+                        { className: 'pages' },
+                        _react2.default.createElement(
+                            'li',
+                            null,
+                            'Prev'
+                        ),
+                        _react2.default.createElement(
+                            'li',
+                            { className: 'active' },
+                            '1'
+                        ),
+                        _react2.default.createElement(
+                            'li',
+                            null,
+                            '2'
+                        ),
+                        _react2.default.createElement(
+                            'li',
+                            null,
+                            '3'
+                        ),
+                        _react2.default.createElement(
+                            'li',
+                            null,
+                            '4'
+                        ),
+                        _react2.default.createElement(
+                            'li',
+                            null,
+                            'Next'
+                        )
+                    )
+                )
             );
         }
     }]);

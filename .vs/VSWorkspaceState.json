@@ -3,7 +3,9 @@
     "",
     "\\assets",
     "\\assets\\js",
-    "\\assets\\js\\realEstate"
+    "\\assets\\js\\realEstate",
+    "\\assets\\js\\realEstate\\Data",
+    "\\assets\\sass"
   ],
   "SelectedNode": "\\assets\\js\\realEstate\\realEstate.js",
   "PreviewInSolutionExplorer": false
