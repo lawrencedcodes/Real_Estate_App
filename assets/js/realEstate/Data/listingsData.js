@@ -5,7 +5,7 @@ var listingsData = [
         state: 'CA',
         rooms: '4',
         price: 553000,
-        floorSpace: '3500 sq ft',
+        floorSpace: 3500,
         amenities: [
             'elevator',
             'gym'
@@ -19,7 +19,7 @@ var listingsData = [
         state: 'CA',
         rooms: '3',
         price: 443000,
-        floorSpace: '2500 sq ft',
+        floorSpace: 2500,
         amenities: [
             'elevator',
             'gym'
@@ -33,7 +33,7 @@ var listingsData = [
         state: 'CA',
         rooms: '2',
         price: 253000,
-        floorSpace: '1700 sq ft',
+        floorSpace: 1700,
         amenities: [
             'elevator',
             'gym'
@@ -47,7 +47,7 @@ var listingsData = [
         state: 'CA',
         rooms: '4',
         price: 553000,
-        floorSpace: '3500 sq ft',
+        floorSpace: 3500,
         amenities: [
             'Swimming Pool',
             'gym'
@@ -61,26 +61,26 @@ var listingsData = [
         state: 'CA',
         rooms: '4',
         price: 553000,
-        floorSpace: '3500 sq ft',
+        floorSpace: 3800,
         amenities: [
             'elevator',
             'gym'
         ],
-        homeType: 'Colonial',
+        homeType: 'Craftsman',
         image: 'https://photos.zillowstatic.com/p_e/ISij2ikzmnnbdq1000000000.jpg'
     },
     {
         address: '1810 Countsdale St',
-        city: 'Redwood City',
+        city: 'Redwood city',
         state: 'CA',
         rooms: '3',
         price: 443000,
-        floorSpace: '2500 sq ft',
+        floorSpace: 4375,
         amenities: [
             'elevator',
             'gym'
         ],
-        homeType: 'Tudor',
+        homeType: 'Ranch',
         image: 'https://cdn20.patchcdn.com/users/22877169/20171109/115455/styles/T800x600/public/processed_images/b0f4067cc3e8b6bb5672a90bb5857e66l-m0o.jpg'
     },
     {
@@ -89,7 +89,7 @@ var listingsData = [
         state: 'CA',
         rooms: '2',
         price: 253000,
-        floorSpace: '1700 sq ft',
+        floorSpace: 1795,
         amenities: [
             'elevator',
             'gym'
@@ -103,7 +103,7 @@ var listingsData = [
         state: 'CA',
         rooms: '4',
         price: 553000,
-        floorSpace: '3500 sq ft',
+        floorSpace: 5250,
         amenities: [
             'Swimming Pool',
             'gym'

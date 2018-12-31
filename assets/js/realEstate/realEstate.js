@@ -11,6 +11,9 @@ class App extends Component {
     this.state = {
         name: 'Lawrence',
         listingsData,
+        city: 'All',
+        homeType: 'All',
+        bedrooms: 0,
         min_price: 0,
         max_price: 100000000,
         min_floor_space: 0,
@@ -31,9 +34,28 @@ class App extends Component {
             [name]: value
         }, () => {
             console.log(this.state)
+            this.filteredData()
         })
     }
     filteredData() {
+        var newData = this.state.listingsData.filter((item) => {
+            return item.price >= this.state.min_price && item.price <= this.state.max_price
+                && item.floorSpace >= this.state.min_floor_space && item.floorSpace <= this.state.max_floor_space
+            && item.rooms >= this.state.bedrooms
+        })
+        if (this.state.city != 'All') {
+            newData = newData.filter((item) => {
+                return item.city == this.state.city
+            })
+        }
+        if (this.state.homeType != 'All') {
+            newData = newData.filter((item) => {
+                return item.homeType == this.state.homeType
+            })
+        }
+        this.setState({
+            filteredData: newData
+        })
 
     }
   render () {

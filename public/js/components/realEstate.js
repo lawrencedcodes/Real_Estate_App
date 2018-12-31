@@ -15,7 +15,7 @@ var listingsData = [{
     state: 'CA',
     rooms: '4',
     price: 553000,
-    floorSpace: '3500 sq ft',
+    floorSpace: 3500,
     amenities: ['elevator', 'gym'],
     homeType: 'Colonial',
     image: 'https://cdn20.patchcdn.com/users/22877169/20171109/115455/styles/T800x600/public/processed_images/b0f4067cc3e8b6bb5672a90bb5857e66l-m0o.jpg'
@@ -25,7 +25,7 @@ var listingsData = [{
     state: 'CA',
     rooms: '3',
     price: 443000,
-    floorSpace: '2500 sq ft',
+    floorSpace: 2500,
     amenities: ['elevator', 'gym'],
     homeType: 'Tudor',
     image: 'https://cdn.vox-cdn.com/thumbor/5sQUgzPgBfro_asIMTpSSaeJOgM=/192x0:3302x2333/1200x900/filters:focal(192x0:3302x2333)/cdn.vox-cdn.com/uploads/chorus_image/image/54630217/carroll_1.0.0.jpg'
@@ -35,7 +35,7 @@ var listingsData = [{
     state: 'CA',
     rooms: '2',
     price: 253000,
-    floorSpace: '1700 sq ft',
+    floorSpace: 1700,
     amenities: ['elevator', 'gym'],
     homeType: 'Colonial',
     image: 'https://cdn2.lamag.com/wp-content/uploads/sites/6/2018/06/house-los-angeles-getty.jpg'
@@ -45,7 +45,7 @@ var listingsData = [{
     state: 'CA',
     rooms: '4',
     price: 553000,
-    floorSpace: '3500 sq ft',
+    floorSpace: 3500,
     amenities: ['Swimming Pool', 'gym'],
     homeType: 'Victorian',
     image: 'https://amp.businessinsider.com/images/572cec5352bcd022008c166e-750-563.jpg'
@@ -55,19 +55,19 @@ var listingsData = [{
     state: 'CA',
     rooms: '4',
     price: 553000,
-    floorSpace: '3500 sq ft',
+    floorSpace: 3800,
     amenities: ['elevator', 'gym'],
-    homeType: 'Colonial',
+    homeType: 'Craftsman',
     image: 'https://photos.zillowstatic.com/p_e/ISij2ikzmnnbdq1000000000.jpg'
 }, {
     address: '1810 Countsdale St',
-    city: 'Redwood City',
+    city: 'Redwood city',
     state: 'CA',
     rooms: '3',
     price: 443000,
-    floorSpace: '2500 sq ft',
+    floorSpace: 4375,
     amenities: ['elevator', 'gym'],
-    homeType: 'Tudor',
+    homeType: 'Ranch',
     image: 'https://cdn20.patchcdn.com/users/22877169/20171109/115455/styles/T800x600/public/processed_images/b0f4067cc3e8b6bb5672a90bb5857e66l-m0o.jpg'
 }, {
     address: '49 W Midline Circle',
@@ -75,7 +75,7 @@ var listingsData = [{
     state: 'CA',
     rooms: '2',
     price: 253000,
-    floorSpace: '1700 sq ft',
+    floorSpace: 1795,
     amenities: ['elevator', 'gym'],
     homeType: 'Colonial',
     image: 'http://www.nolahomes.net/wp-content/uploads/2013/02/Love-the-Natural-Wood-Door-and-Shutter-New-Orleans-Homes--1024x685.jpg'
@@ -85,7 +85,7 @@ var listingsData = [{
     state: 'CA',
     rooms: '4',
     price: 553000,
-    floorSpace: '3500 sq ft',
+    floorSpace: 5250,
     amenities: ['Swimming Pool', 'gym'],
     homeType: 'Victorian',
     image: 'https://cdn.vox-cdn.com/thumbor/i9lvXZ2RPM0O6ScrgF3YoGG-DG4=/38x0:625x440/1200x900/filters:focal(38x0:625x440)/cdn.vox-cdn.com/uploads/chorus_image/image/53622201/4.0.0.jpg'
@@ -148,8 +148,18 @@ var Filter = function (_react$Component) {
                         'Make Your Selection'
                     ),
                     react.default.createElement(
+                        'label',
+                        { htmlfor: 'city' },
+                        'City'
+                    ),
+                    react.default.createElement(
                         'select',
-                        { name: 'neighborhood', className: 'filters neighborhood', onChange: this.props.change },
+                        { name: 'city', className: 'filters city', onChange: this.props.change },
+                        react.default.createElement(
+                            'option',
+                            { value: 'All' },
+                            'All'
+                        ),
                         react.default.createElement(
                             'option',
                             { value: 'San Francisco' },
@@ -177,13 +187,23 @@ var Filter = function (_react$Component) {
                         ),
                         react.default.createElement(
                             'option',
-                            { value: 'Redwood City' },
-                            'Redwood City'
+                            { value: 'Redwood city' },
+                            'Redwood city'
                         )
                     ),
                     react.default.createElement(
+                        'label',
+                        { htmlfor: 'homeType' },
+                        'Home Type'
+                    ),
+                    react.default.createElement(
                         'select',
-                        { name: 'housetype', className: 'filters housetype', onChange: this.props.change },
+                        { name: 'homeType', className: 'filters homeType', onChange: this.props.change },
+                        react.default.createElement(
+                            'option',
+                            { value: 'All' },
+                            'All Homes'
+                        ),
                         react.default.createElement(
                             'option',
                             { value: 'Ranch' },
@@ -211,8 +231,18 @@ var Filter = function (_react$Component) {
                         )
                     ),
                     react.default.createElement(
+                        'label',
+                        { htmlfor: 'bedrooms' },
+                        'Bedrooms'
+                    ),
+                    react.default.createElement(
                         'select',
                         { name: 'bedrooms', className: 'filters bedrooms', onChange: this.props.change },
+                        react.default.createElement(
+                            'option',
+                            { value: '0' },
+                            '0'
+                        ),
                         react.default.createElement(
                             'option',
                             { value: '1' },
@@ -254,7 +284,7 @@ var Filter = function (_react$Component) {
                             'Floor Space'
                         ),
                         react.default.createElement('input', { type: 'text', name: 'min_floor_space', className: 'min_floor_space', onChange: this.props.change, value: this.props.globalState.min_floor_space }),
-                        react.default.createElement('input', { type: 'text', name: 'max_floor-space', className: 'max_floor_space', onChange: this.props.change, value: this.props.globalState.max_floor_space })
+                        react.default.createElement('input', { type: 'text', name: 'max_floor_space', className: 'max_floor_space', onChange: this.props.change, value: this.props.globalState.max_floor_space })
                     ),
                     react.default.createElement(
                         'div',
@@ -445,6 +475,9 @@ var Listings = function (_Component) {
         value: function loopListings() {
             var listingsData = this.props.listingsData;
 
+            if (listingsData == undefined || listingsData.length == 0) {
+                return "Sorry, your search didn't match any results. Please try again.";
+            }
             return listingsData.map(function (listing, index) {
                 return _react2.default.createElement(
                     'div',
@@ -558,7 +591,7 @@ var Listings = function (_Component) {
                     _react2.default.createElement(
                         'div',
                         { className: 'results' },
-                        '9 results found'
+                        '8 results found'
                     ),
                     _react2.default.createElement(
                         'div',
@@ -692,6 +725,9 @@ var App = function (_Component) {
         _this.state = {
             name: 'Lawrence',
             listingsData: _listingsData2.default,
+            city: 'All',
+            homeType: 'All',
+            bedrooms: 0,
             min_price: 0,
             max_price: 100000000,
             min_floor_space: 0,
@@ -699,9 +735,11 @@ var App = function (_Component) {
             elavator: false,
             swimming_pool: false,
             finished_basement: false,
-            gym: false
+            gym: false,
+            filteredData: _listingsData2.default
         };
         _this.change = _this.change.bind(_this);
+        _this.filteredData = _this.filteredData.bind(_this);
         return _this;
     }
 
@@ -714,6 +752,29 @@ var App = function (_Component) {
             var value = event.target.type === 'checkbox' ? event.target.checked : event.target.value;
             this.setState(_defineProperty({}, name, value), function () {
                 console.log(_this2.state);
+                _this2.filteredData();
+            });
+        }
+    }, {
+        key: 'filteredData',
+        value: function filteredData() {
+            var _this3 = this;
+
+            var newData = this.state.listingsData.filter(function (item) {
+                return item.price >= _this3.state.min_price && item.price <= _this3.state.max_price && item.floorSpace >= _this3.state.min_floor_space && item.floorSpace <= _this3.state.max_floor_space && item.rooms >= _this3.state.bedrooms;
+            });
+            if (this.state.city != 'All') {
+                newData = newData.filter(function (item) {
+                    return item.city == _this3.state.city;
+                });
+            }
+            if (this.state.homeType != 'All') {
+                newData = newData.filter(function (item) {
+                    return item.homeType == _this3.state.homeType;
+                });
+            }
+            this.setState({
+                filteredData: newData
             });
         }
     }, {
@@ -727,7 +788,7 @@ var App = function (_Component) {
                     'section',
                     { id: 'content-area' },
                     _react2.default.createElement(_Filter2.default, { change: this.change, globalState: this.state }),
-                    _react2.default.createElement(_Listings2.default, { listingsData: this.state.listingsData })
+                    _react2.default.createElement(_Listings2.default, { listingsData: this.state.filteredData })
                 )
             );
         }

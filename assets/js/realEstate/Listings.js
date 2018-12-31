@@ -12,6 +12,9 @@ export default class Listings extends Component {
     loopListings() {
 
         let { listingsData } = this.props;
+        if (listingsData == undefined || listingsData.length == 0) {
+            return "Sorry, your search didn't match any results. Please try again."
+        }
         return listingsData.map((listing, index) => {
             return (
                 <div className="col-md-3" key={index}>
@@ -59,7 +62,7 @@ export default class Listings extends Component {
               </section>
               <section className="sort-by-area">
                   <div className="results">
-                      9 results found
+                      8 results found
                   </div>
                   <div className="sort-options">
                       <select name="sort-by" className="sort-by">
