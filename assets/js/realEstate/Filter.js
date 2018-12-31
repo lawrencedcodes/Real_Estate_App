@@ -13,43 +13,43 @@ export default class Filter extends react.Component {
           <section id="filter">
             <div className="inside">
               <h4>Make Your Selection</h4>
-              <select name="neighborhood" className="filters neighborhood">
-                      <option>San Francisco</option>
-                      <option>Oakland</option>
-                      <option>Sacramento</option>
-                      <option>Palo Alto</option>
-                      <option>San Mateo</option>
-                      <option>Redwood City</option>
+                  <select name="neighborhood" className="filters neighborhood" onChange={this.props.change}>
+                      <option value="San Francisco">San Francisco</option>
+                      <option value="Oakland">Oakland</option>
+                      <option value="Sacramento">Sacramento</option>
+                      <option value="Palo Alto">Palo Alto</option>
+                      <option value="San Mateo">San Mateo</option>
+                      <option value="Redwood City">Redwood City</option>
               </select>
-              <select name="housetype" className="filters housetype">
-                      <option>Ranch</option>
-                      <option>Colonial</option>
-                      <option>Victorian</option>
-                      <option>Craftsman</option>
-                      <option>Tudor</option>
+                  <select name="housetype" className="filters housetype" onChange={this.props.change}>
+                      <option value="Ranch">Ranch</option>
+                      <option value="Colonial">Colonial</option>
+                      <option value="Victorian">Victorian</option>
+                      <option value="Craftsman">Craftsman</option>
+                      <option value="Tudor">Tudor</option>
               </select>
-              <select name="bedrooms" className="filters bedrooms">
-                  <option>1+</option>
-                  <option>2+</option>
-                  <option>3+</option>
-                  <option>4+</option>
+                  <select name="bedrooms" className="filters bedrooms" onChange={this.props.change}>
+                  <option value="1">1+</option>
+                  <option value="2">2+</option>
+                  <option value="3">3+</option>
+                  <option value="4">4+</option>
               </select>
               <div className="filters price">
                   <span className="title">Price</span>
-                  <input type="text" name="min-price" className="min-price" />
-                  <input type="text" name="max-price" className="max-price" />
+                      <input type="text" name="min_price" className="min_price" onChange={this.props.change} value={this.props.globalState.min_price}/>
+                      <input type="text" name="max_price" className="max_price" onChange={this.props.change} value={this.props.globalState.max_price} />
               </div>
               <div className="filters floor-space">
                   <span className="title">Floor Space</span>
-                  <input type="text" name="min-floor-space" className="min-floor-space" />
-                  <input type="text" name="max-floor-space" className="max-floor-space" />
+                  <input type="text" name="min_floor_space" className="min_floor_space" onChange={this.props.change} value={this.props.globalState.min_floor_space} />
+                  <input type="text" name="max_floor-space" className="max_floor_space" onChange={this.props.change} value={this.props.globalState.max_floor_space} />
               </div>
               <div className="filters amenities">
-                  <span className="title">Amenities</span>     
-                  <label for="amenitites"><span>Elevators</span><input name="amenities" value="elevator" type="checkbox" /></label>
-                  <label for="amenitites"><span>Swimming Pool</span><input name="amenities" value="swimming-pool" type="checkbox" /></label>
-                  <label for="amenitites"><span>Finished Basement</span><input name="amenities" value="finished-basement" type="checkbox" /></label>
-                  <label for="amenitites"><span>Gym</span><input name="gym" value="gym" type="checkbox" /></label>
+                    <span className="title">Amenities</span>     
+                      <label htmlfor="amenitites"><span>Elevators</span><input name="elevator" value="elevator" type="checkbox" onChange={this.props.change} /></label>
+                      <label htmlfor="amenitites"><span>Swimming Pool</span><input name="swimming_pool" value="swimming_pool" type="checkbox" onChange={this.props.change}  /></label>
+                      <label htmlfor="amenitites"><span>Finished Basement</span><input name="finished_basement" value="finished_basement" type="checkbox" onChange={this.props.change} /></label>
+                    <label htmlfor="amenitites"><span>Gym</span><input name="gym" value="gym" type="checkbox" onChange={this.props.change} /></label>
               </div>
             </div>
           </section>
