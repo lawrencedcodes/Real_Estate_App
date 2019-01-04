@@ -22,11 +22,22 @@ class App extends Component {
         swimming_pool: false,
         finished_basement: false,
         gym: false,
-        filteredData: listingsData
+        filteredData: listingsData,
+        populateFormsData: ' ',
+        sortby: 'price-dsc'
       }
       this.change = this.change.bind(this)
       this.filteredData = this.filteredData.bind(this)
-  }
+      this.populateForms = this.populateForms.bind(this)
+    }
+    componentWillMount(){
+        var listingsData = this.state.listingsData.sort((a, b) => {
+            return a.price - b.price
+        })
+        this.setState({
+            listingsData
+        })
+    }
     change(event) {
         let name = event.target.name
         const value = (event.target.type === 'checkbox') ? event.target.checked : event.target.value 
@@ -43,28 +54,70 @@ class App extends Component {
                 && item.floorSpace >= this.state.min_floor_space && item.floorSpace <= this.state.max_floor_space
             && item.rooms >= this.state.bedrooms
         })
-        if (this.state.city != 'All') {
+        if (this.state.city !== 'All') {
             newData = newData.filter((item) => {
-                return item.city == this.state.city
+                return item.city === this.state.city
             })
         }
-        if (this.state.homeType != 'All') {
+        if (this.state.homeType !== 'All') {
             newData = newData.filter((item) => {
-                return item.homeType == this.state.homeType
+                return item.homeType === this.state.homeType
+            })
+        }
+        if (this.state.sortby === 'price-dsc') {
+            newData = newData.sort((a,b) => {
+                return a.price - b.price
+            })
+        }
+        if (this.state.sortby === 'price-asc') {
+            newData = newData.sort((a, b) => {
+                return b.price - a.price
             })
         }
         this.setState({
             filteredData: newData
         })
+    }
+    populateForms() {
+        //city
+        var cities = this.state.listingsData.map((item) => {
+            return item.city
+        })
+        cities = new Set(cities)
+        cities = [...cities]
+        cities = cities.sort()
+        //hometype
+        var homeTypes = this.state.listingsData.map((item) => {
+            return item.homeType
+        })
+        homeTypes = new Set(homeTypes)
+        homeTypes = [...homeTypes]
+        homeTypes = homeTypes.sort();
+        //bedrooms
+        var bedrooms = this.state.listingsData.map((item) => {
+            return item.rooms
+        })
+        bedrooms = new Set(bedrooms)
+        bedrooms = [...bedrooms]
+        bedrooms = bedrooms.sort()
 
+        this.setState({
+            populateFormsData: {
+                homeTypes,
+                bedrooms,
+                cities
+            }
+        }, () => {
+            console.log(this.state)
+        })
     }
   render () {
       return (
           <div>
               <Header />
               <section id="content-area">
-                  <Filter change={this.change} globalState={this.state} />
-                  <Listings listingsData={this.state.filteredData} />
+                  <Filter change={this.change} globalState={this.state} populateAction={this.populateForms} />
+                  <Listings listingsData={this.state.filteredData} change={this.change} globalState={this.state} />
               </section>
           </div>
           )
