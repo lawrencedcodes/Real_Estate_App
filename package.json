@@ -5,7 +5,7 @@
   "main": "index.js",
   "author": "joe santos garcia",
   "license": "MIT",
-  "homepage": "http://rocky.codingphase.com/",
+  "homepage": "http://onesirian.github.io/Real_Estate_App",
   "dependencies": {
     "axios": "^0.16.1",
     "babel-core": "^6.24.1",
@@ -16,6 +16,7 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "browser-sync": "^2.18.8",
+    "gh-pages": "^2.0.1",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
     "gulp-babel": "^6.1.2",
@@ -40,6 +41,8 @@
     "webpack-stream": "^3.2.0"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "bundle": "./node_modules/.bin/webpack",
     "production": "./node_modules/.bin/webpack -p",
     "watch": "gulp",
